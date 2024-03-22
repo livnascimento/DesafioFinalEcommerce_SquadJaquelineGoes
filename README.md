@@ -19,9 +19,11 @@ Este projeto foi desenvolvido pelo squad Jaqueline Goes como solução do desafi
 
 ![](./uml/diagramaCasosDeUso.jpg)
 
-<!-- ### Diagrama de classes
+### Diagrama de classes
 
-## Como utilizar -->
+![](./uml/diagramaClasses.jpg)
+
+<!-- ## Como utilizar  -->
 
 ## Contribuição
 
