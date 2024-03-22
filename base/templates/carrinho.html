@@ -1,7 +1,10 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h2>Carrinho de compras</h2>
-
-    Nenhum produto adicionado.
+    {% if pedidos == null %}
+    <div class="h-100 text-center">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/007/746/386/small/still-empty-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg" height="200vh">
+        <p class="fs-5 mt-4">Hum, parece que sua sacola está vazia.</p>
+    </div>
+    {% endif %}
 {% endblock %}
