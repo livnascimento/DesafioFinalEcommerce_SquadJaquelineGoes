@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from base.models import Produtos
 
 def home(request):
-    return render(request, 'home.html')
+    produtos = Produtos.objects.all()
+    return render(request, 'home.html', {'produtos': produtos})
 
 def carrinho(request):
     return render(request, 'carrinho.html')
