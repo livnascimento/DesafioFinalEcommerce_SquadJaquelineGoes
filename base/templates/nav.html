@@ -1,0 +1,152 @@
+<!-- Primeiro Menu -->
+<nav class="navbar navbar-expand-lg  p-3  "
+     style="background-color:#01406d">
+  <div class="container-fluid "  style="color:#F5fefe">
+    <!-- Nome/Logo -->
+    <a class="navbar-brand" style="color:#F5fefe; font-size:25px;"><strong>NerdWear</strong></a></a>
+    <!-- Pesquisa -->
+    <form class="d-flex  ml-md-3 my-2 my-md-0 mw-100 "
+          role="search"
+          method='POST'
+          action='{% url 'search' %}'>
+      {% csrf_token %}
+      <input class="form-control  border-0 small"
+             type="search"
+             placeholder="Search"
+             aria-label="Search"
+             name='searched' />
+      <button class="btn btn-outline" style="color:#ff7a0f" type="submit">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+    <!-- Icones&login -->
+    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small align-items-center fs-5">
+      <!-- Menu Login User -->
+      {% if user.is_authenticated %}
+        {% comment %} Menu nome user {% endcomment %}
+        <li class="nav-item dropdown">
+          <a class="nm nav-link mx-2 nav-link-bar  "
+             style="color:#F5fefe"
+             href="#"
+             id="logout-link"
+             role="button"
+             data-bs-toggle="dropdown"
+             aria-expanded="false">{{ user.username }}<i class="bi bi-box-arrow-right p-2"></i></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item"
+                 data-bs-toggle="modal"
+                 data-bs-target="#exampleModal"> <i class="bi bi-box-arrow-right"></i> Sair  </a>
+            </li>
+          </ul>
+        </li>
+        <!-- Icone Sacola-->
+        <li>
+          <a href="" class="nav-link text-light">
+            <i class="bi bi-bag"></i>
+          </a>
+        </li>
+        <!-- Icone Pedidos -->
+        <li>
+          <a href="" class="nav-link text-light">
+            <i class="bi bi-box-seam"></i>
+          </a>
+        </li>
+      {% else %}
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-2 nav-link-bar bt "
+             style="color:#F5fefe"
+             href="#"
+             id="logout-link"
+             role="button"
+             data-bs-toggle="dropdown"
+             aria-expanded="false">Entrar</i></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <a class="nav-link mx-2 nav-link-bar" href="{% url "login_user" %}">Login</a>
+            </li>
+            <li class="dropdown-item">
+              <a class="nav-link mx-2 nav-link-bar" href="{% url "register" %}">cadastro</a>
+            </li>
+          </ul>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+<!-- Segundo Menu -->
+<nav class="men navbar  navbar-expand-lg   p-3 shadow-sm "
+     style="background-color:#01406d">
+  <div class="container-fluid  ">
+    <a class="navbar-brand"></a>
+    <!-- Menu Lateral -->
+    <div class="offcanvas offcanvas-end"
+         style="background-color:#01406d"
+         tabindex="-1"
+         id="offcanvasDarkNavbar"
+         aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title"
+            id="offcanvasDarkNavbarLabel"
+            style="color:#F5fefe">Menu</h5>
+        <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end text-center  flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="menu nav-link mx-2 nav-link-bar active"
+               href="{% url "home" %}"
+               style="color:#F5fefe">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="menu nav-link mx-2 nav-link-bar"
+               href="#categoria"
+               style="color:#F5fefe">Categorias</a>
+          </li>
+          <li class="nav-item">
+            <a class="menu nav-link mx-2 nav-link-bar" href="" style="color:#F5fefe">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="menu nav-link mx-2 nav-link-bar"
+               href="{% url "search" %}"
+               style="color:#F5fefe">Ofertas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- botão menu -->
+    <button class="navbar-toggler"
+            style="color:#F5fefe"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<!-- Modal Deseja Sair? -->
+<div class="modal fade"
+     id="exampleModal"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Você deseja sair do site?</h1>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <a class="btn btn-primary" href="{% url "logout_user" %}">Sair</a>
+      </div>
+    </div>
+  </div>
+</div>
