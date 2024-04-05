@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from base.views import home, carrinho, pedidos, category, search, product, logout_user, register_user, login_user
+from base.views import home, carrinho, pedidos, category, search, product, logout_user, register_user, login_user, ofertas, categorias
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,4 +13,6 @@ urlpatterns = [
     path('logout/', logout_user, name='logout_user'),
     path('register/', register_user, name='register'),
     path('search/', search, name='search'),
+    path('ofertas/', ofertas, name='ofertas'),
+    path('categerias/', categorias, name='categorias')
 ]

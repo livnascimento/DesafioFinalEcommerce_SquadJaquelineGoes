@@ -24,6 +24,14 @@ def pedidos(request):
 def pedido(request):
     pass
 
+# Ofertas
+def ofertas(request):
+    products = Product.objects.filter(is_sale=True)
+    return render(request, 'oferta.html', {'products': products})
+
+# Pagina Categorias
+def categorias(request):
+    return render(request, 'categorias.html', {'category': category})
 
 # Category
 def category(request,foo):

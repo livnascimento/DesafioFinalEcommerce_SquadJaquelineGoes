@@ -1,0 +1,82 @@
+{% extends 'index.html' %}
+{% block content %}
+  <!-- Header-->
+  <header class="bg py-5 d-flex justify-content-center align-items-center"
+          style="height: 200px; ">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center">
+        <h1 class="display-3 fw-bolder">Categorias</h1>
+      </div>
+    </div>
+  </header>
+<!-- Card categorias-->
+  <main class="bg-light py-5 d-flex justify-content-center align-items-center"
+        id="categoria">
+    <div class="container px-4 px-lg-5 my-5">
+      
+      <!-- Card categorias-->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-5">
+        <!-- Card Livros-->
+        <div class="col">
+          <div class="card h-100 text-center bg-dark">
+            <i class="bi bi-book fa-5x mt-3 text-white" style="font-size: 5em;"></i>
+            <div class="card-body text-white">
+              <a class="card-title mt-3" href="{% url 'category' 'Livros' %}">Livros</a>
+              <p class="card-text">Explore nossa coleção de livros.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card Tecnologia-->
+        <div class="col">
+          <div class="card h-100 text-center bg-dark">
+            <i class="bi bi-laptop fa-5x mt-3 text-white" style="font-size: 5em;"></i>
+            <div class="card-body text-white">
+              <a class="card-title mt-3" href="{% url 'category' 'Tecnologia' %}">Tecnologia</a>
+              <p class="card-text">Explore nossa coleção de livros.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card Poster-->
+        <div class="col">
+          <div class="card h-100 text-center bg-dark">
+            <i class="bi bi-image fa-5x mt-3 text-white" style="font-size: 5em;"></i>
+            <div class="card-body text-white">
+              <a class="card-title mt-3" href="{% url 'category' 'Posters' %}">Posters</a>
+              <p class="card-text">Explore nossa coleção de livros.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card Canecas-->
+        <div class="col">
+          <div class="card h-100 text-center bg-dark">
+            <i class="bi bi-cup fa-5x mt-3 text-white" style="font-size: 5em;"></i>
+            <div class="card-body text-white">
+              <a class="card-title mt-3 href="{% url 'category' 'Xicaras' %}"">Copo</a>
+              <p class="card-text">Explore nossa coleção de livros.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card Roupas-->
+        <div class="col">
+          <div class="card h-100 text-center bg-dark">
+            <i class="bi bi-controller fa-5x mt-3 text-white" style="font-size: 5em"></i>
+            <div class="card-body text-white">
+              <a class="card-title mt-3" href="{% url 'category' 'Jogos' %}">Jogos</a>
+              <p class="card-text">Explore nossa coleção de livros.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card Coleções -->
+        <div class="col">
+          <div class="card h-100 text-center bg-dark">
+            <i class="bi bi-headset fa-5x mt-3 text-white" style="font-size: 5em;"></i>
+            <div class="card-body text-white">
+              <a class="card-title mt-3 "href="{% url 'category' 'Coleção' %}">Coleções</a>
+              <p class="card-text">Explore nossa coleção de livros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  {% endblock %}
