@@ -14,7 +14,7 @@
         <div class="card">
           <div class="card-header">Registro de Conta</div>
           <div class="card-body">
-            <form method="post" action="{% url 'register' %} " >
+            <form method="post" action="."  autocomplete="off" >
               {% csrf_token %}
               {{ form.as_p }}
               <button type="submit" class="btn btn-primary">Registrar</button>

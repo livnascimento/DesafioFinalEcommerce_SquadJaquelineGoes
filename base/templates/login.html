@@ -11,13 +11,13 @@
   </header>
   <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
-      <form method="POST" action="{% url 'login_user' %}">
+      <form method="POST" action="." autocomplete="off">
         {% csrf_token %}
         <div class="mb-3">
           <input type="text"
                  class="form-control"
                  name="username"
-                 placeholder="Enter your username" />
+                 placeholder="Email por favor" />
         </div>
         <div class="mb-3">
           <input type="password"

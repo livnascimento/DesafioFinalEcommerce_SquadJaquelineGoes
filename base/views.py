@@ -5,8 +5,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import SignUpForm
-from django import forms
+from .forms import UserForm
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     products = Product.objects.all()
@@ -46,45 +46,45 @@ def category(request,foo):
 
 
 
-
+# Cadastro
 def register_user(request):
-    form = SignUpForm()
-    if request.method == "POST":
-        form = SignUpForm(request.POST)
+    template_name = 'register.html'
+    context = {}
+    if request.method == 'POST':
+        form = UserForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            messages.success(request, "Cadastro realizado com sucesso")
-            return redirect('home')
-        else:
-                messages.error(request, "Erro ao autenticar o usuário após o cadastro")
-                return redirect('register')
-    else:
-        return render(request, 'register.html', {'form':form})
+            f = form.save()
+            f.set_password(f.password)
+            f.save()
+            messages.success(request, 'Usuário cadastrado com sucesso.')
+            return redirect('login')
+    form = UserForm()
+    context['form'] = form
+    return render(request, template_name, context)
 
 # Login
 def login_user(request):
-    if request.method == "POST":
+    template_name = 'login.html'
+    if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, "Login realizado com sucesso")
             return redirect('home')
         else:
-            messages.error(request, "Nome de usuário ou senha inválidos")
-            return redirect('login_user')
-    else:
-        return render(request, 'login.html', {})
+            print('deu caca')
+
+    return render(request, template_name, {})
+
+
 # Logout
-def logout_user(request):
+
+def user_logout(request):
     logout(request)
-    messages.success(request, "Conta desconectada")
+    messages.success(request, 'Você saiu do sistema.')
     return redirect('home')
+
 
 
 # Detalhes Produto
