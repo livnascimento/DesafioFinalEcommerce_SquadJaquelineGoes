@@ -6,90 +6,105 @@
           style="height: 150px">
     <div class="container px-4 px-lg-5 my-5">
       <div class="text-center">
-        <h1 class="display-3 fw-bolder">Ofertas</h1>
+        <h1 class="categoria  display-3 fw-bolder mt-5 text-center">Ofertas</h1>
       </div>
     </div>
   </header>
 
 <!-- Produtos-->
-  <section class="py-5">
+   <section class=" py-5 ">
     <div class="container px-4 px-lg-5 mt-5">
-      <h1>Produtos</h1>
+   <div class="text-center text-dark">
+        <h1 class="categoria  display-3 fw-bolder mb-5">Produtos</h1>
+      </div>
       <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         {% for product in products %}
         {% if product.is_sale %}
         <div class="col mb-5">
-            <div class="card h-100 bg-secondary text-light">
+            <div class="cad card h-100  ">
             <!-- Produto Oferta-->
-             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
+             <div class="badge  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
               <!-- Produto image-->
-              <img class="card-img-top" src="{{ product.image.url }} " alt="imagem do produto" />
+              <img class=" card-img-top" src="{{ product.image.url }} " alt="imagem do produto" />
               <!-- Produto detalhes-->
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Produto nome-->
-                  <h5 class="fw-bolder">{{ product.name }}</h5>
+                  <h5 class="pro fw-bolder">{{ product.name }}</h5>
+    <p>
+   {% if product.rating %}
+        {% for i in product.stars %}
+          <i class="estrela bi bi-star-fill text-warning"></i>
+        {% endfor %}
+  
+    {% endif %}             
+      </p> 
                   <!-- Product preço-->
-                  <strike>R${{ product.price }}</strike>
+                
+             
+                
                   <br />
+                   <h2 class="risco"> 
                   R${{ product.sale_price }}
-                  <p>Categoria</p>
+                    </h2>
+                     <br />
+                  <p>Categoria: 
                   {{ product.category }}
+                  </p>
                 </div>
               </div>
               <!-- Product actions-->
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <a class="btn btn-outline-dark mt-auto mb-3"
+                  <a class="bt btn btn-outline-dark mt-auto mb-3"
                      href="{% url 'product' product.id %}">Detalhes</a>
                 </div>
-                <div class="d-flex">
-                  <input class="form-control text-center me-3"
-                         id="inputQuantity"
-                         type="num"
-                         value="1"
-                         style="max-width: 3rem" />
-                  <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                    <i class="bi-cart-fill me-1"></i>
-                    add sacola
-                  </button>
+                <div class=" text-center">
                 </div>
               </div>
             </div>
           </div>
         {% else %}
           <div class="col mb-5">
-            <div class="card h-100 bg-secondary text-light">
+            <div class="cad card h-100  ">
+            <!-- Produto Oferta-->
+             <div class="badge  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
               <!-- Produto image-->
-              <img class="card-img-top" src="{{ product.image.url }} " alt="imagem do produto" />
+              <img class=" card-img-top" src="{{ product.image.url }} " alt="imagem do produto" />
               <!-- Produto detalhes-->
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Produto nome-->
-                  <h5 class="fw-bolder">{{ product.name }}</h5>
+                  <h5 class="pro fw-bolder">{{ product.name }}</h5>
+    <p>
+   {% if product.rating %}
+        {% for i in product.stars %}
+          <i class="estrela bi bi-star-fill text-warning"></i>
+        {% endfor %}
+  
+    {% endif %}             
+      </p> 
                   <!-- Product preço-->
-                  R${{ product.price }}
+                
+                  <strike >R${{ product.price }}</strike>
+                
                   <br />
-                  <p>Categoria</p>
+                   <h2 class="risco"> 
+                  R${{ product.sale_price }}
+                    </h2>
+                     <br />
+                  <p>Categoria: 
                   {{ product.category }}
+                  </p>
                 </div>
               </div>
               <!-- Product actions-->
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <a class="btn btn-outline-dark mt-auto mb-3"
+                  <a class="bt btn btn-outline-dark mt-auto mb-3"
                      href="{% url 'product' product.id %}">Detalhes</a>
                 </div>
-                <div class="d-flex">
-                  <input class="form-control text-center me-3"
-                         id="inputQuantity"
-                         type="num"
-                         value="1"
-                         style="max-width: 3rem" />
-                  <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                    <i class="bi-cart-fill me-1"></i>
-                    add sacola
-                  </button>
+                <div class=" text-center">
                 </div>
               </div>
             </div>

@@ -1,10 +1,29 @@
+/* Cores */
 :root {
-  --bgcolor: #01406d;
-  --deco: #ff7a0f;
-  --white: #f5fefe;
-  --titulo: #01b4ba;
+  --bgcolor: #232931;
+  --deco: #00c8a0;
+  --white: #eeeeee;
+  --titulo: #3f4246;
+  --rosa: #028487;
+  --azul: #0f3460;
+  --azulescuro: #16213e;
+  --teste: #02ad8b;
 }
 
+/* Titulos */
+:root {
+  --titulo-font: "Work Sans", sans-serif;
+  --texto-font: "Titillium Web", sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Botão */
 .bt {
   background-color: var(--deco);
   color: var(--white);
@@ -15,40 +34,176 @@
   transition: 0.3s background-color;
 }
 
-.bt:hover,
-.nm:hover {
-  background-color: var(--titulo);
+.bt:hover {
+  background-color: var(--white);
+  color: var(--rosa);
 }
+/* Inicio Menu */
 
-.menu {
-  position: relative;
-}
-
+/* Menu */
 .menu:hover,
 .menu.active {
-  color: var(--deco) !important;
+  color: var(--white);
+  background-color: var(--deco);
+  border-radius: 10px;
 }
-
-.menu::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
+.menu {
+  color: var(--white);
+  cursor: pointer;
+}
+/* Menu Drop */
+.dropdown-menu {
+  background-color: var(--bgcolor);
+}
+.dropdown-menu .dropdown-item:hover {
   background-color: var(--titulo);
-  visibility: hidden;
-  transition: 0.3s ease-in-out;
+}
+/* Primeiro Menu */
+nav.lg {
+  background-color: var(--titulo) !important;
+  letter-spacing: 2px;
+  font-family: var(--titulo-font);
 }
 
-.menu:hover::before,
-menu.active::before {
+/* Titulos */
+.titulos {
+  color: var(--deco);
+  font-family: var(--texto-font);
+  font-size: 60px;
+}
+
+.categoria {
+  color: var(--teste);
+  font-size: 70px;
+  font-family: var(--titulo-font);
+  font-weight: bold;
+}
+
+.titulo {
+  color: var(--white);
+  font-size: 45px;
+  font-family: var(--titulo-font);
+}
+/* Fim Menu */
+
+/* Header Home */
+.home {
   width: 100%;
-  visibility: visible;
+  height: 900px;
+  background-color: var(--bgcolor);
+  border: none !important;
+  margin-top: 0;
 }
 
-.bg {
-  background-color: var(--white) !important;
+.container {
+  width: 100%;
+  max-width: none;
+  padding: 0 0;
+  margin-bottom: 0;
+  border: none !important;
+}
+
+.container.my-3 {
+  margin-top: 0 !important;
+}
+/* Categorias Links */
+.links {
+  color: var(--deco);
+  letter-spacing: 1px;
+  font-family: var(--titulo-font);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.links:hover {
+  color: var(--white);
+}
+
+.text {
+  font-size: 20px;
+}
+
+.cat {
+  background-color: var(--bgcolor);
+  border-radius: 30px;
+}
+.cat:hover {
+  background-color: var(--titulo);
+}
+
+.bi {
+  font-size: 1.5rem;
+}
+.bi.bi-star-fill {
+  color: var(--teste); /* Change the color of the filled star */
+}
+
+.estrelas {
+  background-color: var(--deco) !important;
+}
+
+.logo {
+  width: 13%;
+  height: auto;
+  margin-bottom: 35px;
+}
+
+.tit {
+  color: var(--deco);
+  font-size: 30px;
+}
+
+.produ {
+  background-color: #02ad8b;
+}
+
+/* Oferta */
+.badge {
+  background-color: var(--teste);
+}
+
+/* Produto Preço */
+.risco {
   color: var(--deco) !important;
+}
+
+.riscos {
+  color: var(--deco);
+  font-size: 30px;
+}
+/* Nome do produto */
+.pro {
+  color: var(--deco);
+  font-size: 35px;
+}
+
+section {
+  background-color: var(--white);
+}
+
+.cad {
+  background-color: var(--bgcolor);
+  color: var(--white);
+  border-radius: 27px;
+}
+
+.card-img-top {
+  border-radius: 27px;
+}
+
+.bn {
+  background-color: var(--deco);
+  color: var(--white);
+}
+
+.bn:hover {
+  background-color: var(--rosa);
+  color: var(--white);
+}
+
+.rodape {
+  background-color: var(--bgcolor);
+  color: var(--white);
+  font-size: 20px;
 }

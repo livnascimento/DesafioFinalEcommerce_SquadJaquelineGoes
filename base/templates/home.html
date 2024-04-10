@@ -2,82 +2,82 @@
 {% block content %}
 
 <!-- Header-->
-  <header class="bg py-5 d-flex justify-content-center align-items-center"
-          style="height: 700px;padding-top: 130px;">
-    <div class="container px-4 px-lg-5 my-5">
+  <header class=" home d-flex justify-content-center align-items-center">
+    <div class="container-fluid " >
       <div class="text-center">
-        <h1 class="display-3 fw-bolder">Alterar</h1>
-        <p class="lead fw-normal  mb-0">em um só lugar</p>
+        <img class="logo"  src="static/assets/logo5.png " >
+        <h1 class="titulos display-3 fw-bolder" >Tudo o que você precisa</h1>
+        <p class="titulo lead fw-normal  mb-0" >em um só lugar</p>
       </div>
     </div>
   </header>
 
    
 <!-- Card categorias-->
-  <main class="bg-light py-5 d-flex justify-content-center align-items-center"
+  <main class="bg-light  py-5 d-flex justify-content-center align-items-center"
         id="categoria">
     <div class="container px-4 px-lg-5 my-5">
       <div class="text-center text-dark">
-        <h1 class="display-5 fw-bolder mb-5">Categorias</h1>
+        <h1 class="categoria  display-3 fw-bolder mb-5">Categorias</h1>
       </div>
       <!-- Card categorias-->
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-5">
         <!-- Card Livros-->
         <div class="col">
-          <div class="card h-100 text-center bg-dark">
+          <div class="cat card h-100 text-center ">
             <i class="bi bi-book fa-5x mt-3 text-white" style="font-size: 5em;"></i>
             <div class="card-body text-white">
-              <a class="card-title mt-3" href="{% url 'category' 'Livros' %}">Livros</a>
+              <a class="links card-title mt-3" href="{% url 'category' 'Livros' %}">Livros</a>
               <p class="card-text">Explore nossa coleção de livros.</p>
             </div>
           </div>
         </div>
         <!-- Card Tecnologia-->
         <div class="col">
-          <div class="card h-100 text-center bg-dark">
+          <div class="cat card h-100 text-center ">
             <i class="bi bi-laptop fa-5x mt-3 text-white" style="font-size: 5em;"></i>
             <div class="card-body text-white">
-              <a class="card-title mt-3" href="{% url 'category' 'Tecnologia' %}">Tecnologia</a>
+              <a class="links card-title mt-3"  href="{% url 'category' 'Tecnologia' %}"> Tecnologia</a>
               <p class="card-text">Explore nossa coleção de livros.</p>
             </div>
           </div>
         </div>
         <!-- Card Poster-->
         <div class="col">
-          <div class="card h-100 text-center bg-dark">
+          <div class="cat card h-100 text-center">
             <i class="bi bi-image fa-5x mt-3 text-white" style="font-size: 5em;"></i>
             <div class="card-body text-white">
-              <a class="card-title mt-3" href="{% url 'category' 'Posters' %}">Posters</a>
+              <a class="links card-title mt-3"  href="{% url 'category' 'Posters' %}">Posters</a>
               <p class="card-text">Explore nossa coleção de livros.</p>
             </div>
           </div>
         </div>
         <!-- Card Canecas-->
         <div class="col">
-          <div class="card h-100 text-center bg-dark">
+          <div class="cat card h-100 text-center ">
             <i class="bi bi-cup fa-5x mt-3 text-white" style="font-size: 5em;"></i>
             <div class="card-body text-white">
-              <a class="card-title mt-3 href="{% url 'category' 'Xicaras' %}"">Copo</a>
+              <a class="links card-title mt-3"  href="{% url 'category' 'Xicaras' %}">Copo</a>
               <p class="card-text">Explore nossa coleção de livros.</p>
             </div>
           </div>
         </div>
         <!-- Card Roupas-->
         <div class="col">
-          <div class="card h-100 text-center bg-dark">
+          <div class="cat card h-100 text-center ">
             <i class="bi bi-controller fa-5x mt-3 text-white" style="font-size: 5em"></i>
             <div class="card-body text-white">
-              <a class="card-title mt-3" href="{% url 'category' 'Jogos' %}">Jogos</a>
+              <a class="links card-title mt-3" href="{% url 'category' 'Jogos' %}">Jogos</a>
               <p class="card-text">Explore nossa coleção de livros.</p>
             </div>
           </div>
         </div>
         <!-- Card Coleções -->
         <div class="col">
-          <div class="card h-100 text-center bg-dark">
+          <div class="cat card h-100 text-center ">
             <i class="bi bi-headset fa-5x mt-3 text-white" style="font-size: 5em;"></i>
             <div class="card-body text-white">
-              <a class="card-title mt-3 "href="{% url 'category' 'Coleção' %}">Coleções</a>
+              <a class="links  card-title mt-3 "href="{% url 'category' 'Coleção' %}">Coleções</a>
               <p class="card-text">Explore nossa coleção de livros.</p>
             </div>
           </div>
@@ -86,84 +86,99 @@
     </div>
   </main>
 <!-- Produtos-->
-  <section class="py-5">
+  <section class=" py-5 ">
     <div class="container px-4 px-lg-5 mt-5">
-      <h1>Produtos</h1>
+   <div class="text-center text-dark">
+        <h1 class="categoria  display-3 fw-bolder mb-5">Produtos</h1>
+      </div>
       <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         {% for product in products %}
         {% if product.is_sale %}
         <div class="col mb-5">
-            <div class="card h-100 bg-secondary text-light">
+            <div class="cad card h-100  ">
             <!-- Produto Oferta-->
-             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
+             <div class="badge  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
               <!-- Produto image-->
-              <img class="card-img-top" src="{{ product.image.url }} " alt="imagem do produto" />
+              <img class=" card-img-top" src="{{ product.image.url }} " alt="imagem do produto" />
               <!-- Produto detalhes-->
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Produto nome-->
-                  <h5 class="fw-bolder">{{ product.name }}</h5>
+                  <h5 class="pro fw-bolder">{{ product.name }}</h5>
+    <p>
+   {% if product.rating %}
+        {% for i in product.stars %}
+          <i class="estrela bi bi-star-fill text-warning"></i>
+        {% endfor %}
+  
+    {% endif %}             
+      </p> 
                   <!-- Product preço-->
-                  <strike>R${{ product.price }}</strike>
+                
+             
+                
                   <br />
+                   <h2 class="risco"> 
                   R${{ product.sale_price }}
-                  <p>Categoria</p>
+                    </h2>
+                     <br />
+                  <p>Categoria: 
                   {{ product.category }}
+                  </p>
                 </div>
               </div>
               <!-- Product actions-->
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <a class="btn btn-outline-dark mt-auto mb-3"
+                  <a class="bt btn btn-outline-dark mt-auto mb-3"
                      href="{% url 'product' product.id %}">Detalhes</a>
                 </div>
-                <div class="d-flex">
-                  <input class="form-control text-center me-3"
-                         id="inputQuantity"
-                         type="num"
-                         value="1"
-                         style="max-width: 3rem" />
-                  <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                    <i class="bi-cart-fill me-1"></i>
-                    add sacola
-                  </button>
+                <div class=" text-center">
                 </div>
               </div>
             </div>
           </div>
         {% else %}
           <div class="col mb-5">
-            <div class="card h-100 bg-secondary text-light">
+            <div class="cad card h-100  ">
+            <!-- Produto Oferta-->
+             <div class="badge  text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
               <!-- Produto image-->
-              <img class="card-img-top" src="{{ product.image.url }} " alt="imagem do produto" />
+              <img class=" card-img-top" src="{{ product.image.url }} " alt="imagem do produto" />
               <!-- Produto detalhes-->
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Produto nome-->
-                  <h5 class="fw-bolder">{{ product.name }}</h5>
+                  <h5 class="pro fw-bolder">{{ product.name }}</h5>
+    <p>
+   {% if product.rating %}
+        {% for i in product.stars %}
+          <i class="estrela bi bi-star-fill text-warning"></i>
+        {% endfor %}
+  
+    {% endif %}             
+      </p> 
                   <!-- Product preço-->
-                  R${{ product.price }}
+                
+                  <strike >R${{ product.price }}</strike>
+                
                   <br />
-                  <p>Categoria</p>
+                   <h2 class="risco"> 
+                  R${{ product.sale_price }}
+                    </h2>
+                     <br />
+                  <p>Categoria: 
                   {{ product.category }}
+                  </p>
                 </div>
               </div>
               <!-- Product actions-->
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <a class="btn btn-outline-dark mt-auto mb-3"
+                  <a class="bt btn btn-outline-dark mt-auto mb-3"
                      href="{% url 'product' product.id %}">Detalhes</a>
                 </div>
-                <div class="d-flex">
-                  <input class="form-control text-center me-3"
-                         id="inputQuantity"
-                         type="num"
-                         value="1"
-                         style="max-width: 3rem" />
-                  <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                    <i class="bi-cart-fill me-1"></i>
-                    add sacola
-                  </button>
+                <div class=" text-center">
                 </div>
               </div>
             </div>
@@ -173,4 +188,40 @@
       </div>
     </div>
   </section>
+
+  <script>
+// Check if button pressed
+$(document).on('click', '#add-cart', function(e){
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '{% url 'cart_add' %}',
+        data: {
+    product_id: $('#add-cart').val(),
+    product_qty: $('#qty-cart option:selected').text(),
+    csrfmiddlewaretoken: '{{ csrf_token }}',
+    action: 'post'
+        },
+
+        success: function(json){
+            //console.log(json)
+            document.getElementById("cart_quantity").textContent = json.qty
+            location.reload();
+        },
+
+        error: function(xhr, errmsg, err){
+
+        }
+
+
+    });
+
+
+
+})
+
+
+
+
+</script>
 {% endblock %}

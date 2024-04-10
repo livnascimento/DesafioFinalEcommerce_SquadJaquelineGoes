@@ -1,11 +1,11 @@
 <!-- Primeiro Menu -->
-<nav class="navbar navbar-expand-lg  p-3   "
-     style="background-color:#01406d">
-  <div class="container-fluid "  style="color:#F5fefe">
+<nav class="lg navbar navbar-expand-lg  p-3   ">
+  <div class="container-fluid "  >
     <!-- Nome/Logo -->
-    <a class="navbar-brand" style="color:#F5fefe; font-size:25px;"><strong>Alterar</strong></a></a>
+    <p class="tit">NerdWear</p>
+
  <!-- Pesquisa -->
-    <form class="d-flex  ml-md-3 my-2 my-md-0 mw-100 "
+    <form class="d-flex  ml-md-3 my-2 my-md-0 mw-100  "
           role="search"
           method='POST'
           action='{% url 'search' %}'>
@@ -15,7 +15,7 @@
              placeholder="Search"
              aria-label="Search"
              name='searched' />
-      <button class="btn btn-outline" style="color:#ff7a0f" type="submit">
+      <button class="bn btn btn-outline "  type="submit">
         <i class="bi bi-search"></i>
       </button>
     </form>
@@ -24,9 +24,8 @@
       <!-- Menu Login User -->
       {% if user.is_authenticated %}
         {% comment %} Menu nome user {% endcomment %}
-        <li class="nav-item dropdown">
-          <a class="nm nav-link mx-2 nav-link-bar  "
-             style="color:#F5fefe"
+        <li class=" nav-item dropdown">
+          <a class="menu nav-link mx-2 nav-link-bar  "
              href="#"
              id="logout-link"
              role="button"
@@ -34,28 +33,31 @@
              aria-expanded="false">{{ user.username }}<i class="bi bi-box-arrow-right p-2"></i></a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item"
+              <a class="menu dropdown-item"
                  data-bs-toggle="modal"
                  data-bs-target="#exampleModal"> <i class="bi bi-box-arrow-right"></i> Sair  </a>
+            </li>
+             <li class="dropdown-item">
+              <a class="menu nav-link mx-2 nav-link-bar" href="{% url "update_user" %}">Atualizar Pefil</a>
+            </li>
+          <li class="dropdown-item">
+              <a class="menu nav-link mx-2 nav-link-bar" href="{% url 'update_info' %}">Atualizar Pagamento</a>
             </li>
           </ul>
         </li>
         <!-- Icone Sacola-->
+          <form class="d-flex">
         <li>
-          <a href="" class="nav-link text-light">
+          <a href="{% url 'cart_summary' %}" class="links nav-link ">
             <i class="bi bi-bag"></i>
-          </a>
+            <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart_quantity">{{ cart|length }}
+        </span></a>
         </li>
-        <!-- Icone Pedidos -->
-        <li>
-          <a href="" class="nav-link text-light">
-            <i class="bi bi-box-seam"></i>
-          </a>
-        </li>
+         </form>
+      
       {% else %}
         <li class="nav-item dropdown">
           <a class="nav-link mx-2 nav-link-bar bt "
-             style="color:#F5fefe"
              href="#"
              id="logout-link"
              role="button"
@@ -63,10 +65,10 @@
              aria-expanded="false">Entrar</i></a>
           <ul class="dropdown-menu">
             <li class="dropdown-item">
-              <a class="nav-link mx-2 nav-link-bar" href="{% url "login_user" %}">Login</a>
+              <a class="menu nav-link mx-2 nav-link-bar" href="{% url "login_user" %}">Login</a>
             </li>
             <li class="dropdown-item">
-              <a class="nav-link mx-2 nav-link-bar" href="{% url "register" %}">cadastro</a>
+              <a class="menu nav-link mx-2 nav-link-bar" href="{% url "register" %}">cadastro</a>
             </li>
           </ul>
         </li>
@@ -75,8 +77,7 @@
   </div>
 </nav>
 <!-- Segundo Menu -->
-<nav class="men navbar  navbar-expand-lg   p-3 shadow-sm "
-     style="background-color:#01406d">
+<nav class="lg navbar  navbar-expand-lg   p-3 " >
   <div class="container-fluid  ">
     <a class="navbar-brand"></a>
     <!-- Menu Lateral -->
@@ -88,7 +89,7 @@
       <div class="offcanvas-header">
         <h5 class="offcanvas-title"
             id="offcanvasDarkNavbarLabel"
-            style="color:#F5fefe">Menu</h5>
+            style="color:#4ECCA3">Menu</h5>
         <button type="button"
                 class="btn-close btn-close-white"
                 data-bs-dismiss="offcanvas"
@@ -99,27 +100,24 @@
           <li class="nav-item">
             <a class="menu nav-link mx-2 nav-link-bar active"
                href="{% url "home" %}"
-               style="color:#F5fefe">Home</a>
+               >Home</a>
           </li>
           <li class="nav-item">
             <a class="menu nav-link mx-2 nav-link-bar"
                href="{% url 'categorias' %}"
-               style="color:#F5fefe">Categorias</a>
-          </li>
-          <li class="nav-item">
-            <a class="menu nav-link mx-2 nav-link-bar" href="" style="color:#F5fefe">Produtos</a>
+               >Categorias</a>
           </li>
           <li class="nav-item">
             <a class="menu nav-link mx-2 nav-link-bar"
                href="{% url "ofertas" %}"
-               style="color:#F5fefe">Ofertas</a>
+               >Ofertas</a>
           </li>
         </ul>
       </div>
     </div>
     <!-- botão menu -->
     <button class="navbar-toggler"
-            style="color:#F5fefe"
+            style="background-color:#4ECCA3;"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasDarkNavbar"
