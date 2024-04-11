@@ -1,10 +1,10 @@
 {% extends 'index.html' %}
 {% block content %}
   <!-- Header-->
-  <header class="bg-dark py-5">
+  <header class="py-5">
     <div class="container px-4 px-lg-5 my-5">
       <div class="text-center text-white">
-        <h1 class="display-4 fw-bolder">Cadastro</h1>
+        <h1 class="categoria display-4 fw-bolder">Cadastro</h1>
       </div>
     </div>
   </header>
@@ -17,7 +17,7 @@
             <form method="post" action="."  autocomplete="off" >
               {% csrf_token %}
               {{ form.as_p }}
-              <button type="submit" class="btn btn-primary">Registrar</button>
+              <button type="submit" class="bt btn btn-primary">Registrar</button>
             </form>
           </div>
         </div>
@@ -41,7 +41,7 @@
                     aria-label="Close"></button>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="bt btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
           </div>
         </div>
       </div>

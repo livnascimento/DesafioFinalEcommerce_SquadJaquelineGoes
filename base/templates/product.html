@@ -55,7 +55,9 @@
             </div>
             <br/><br/>
         <a href="{% url 'home'%}" class="bn btn btn-secondary">Home</a>
+         {% if user.is_authenticated %}
         <button type="button" value="{{ product.id }}" class="bn btn btn-secondary" id="add-cart">Carrinho</button>
+         {% endif %}
       </div>
     </div>
   </div>
