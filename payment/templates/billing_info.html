@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div class="card">
-        <div class="card-header">Order Summary</div>
+        <div class="card-header">Seu Pedido</div>
         <div class="card-body">
           {% for product in cart_products %} {{ product.name }}: {% if
           product.is_sale %} ${{ product.sale_price }} {% else %} ${{
@@ -31,32 +31,31 @@
           <a
             href="{% url 'cart_summary' %}"
             class="btn btn-sm btn-outline-secondary"
-            >Update Items</a
+            >Atualizar</a
           >
         </div>
       </div>
       <br /><br />
       <div class="card">
-        <div class="card-header">Shipping Info</div>
+        <div class="card-header">Cartão</div>
         <div class="card-body">
           Name: {{ shipping_info.shipping_full_name }}<br />
           Email: {{ shipping_info.shipping_email }}<br />
           Address 1: {{ shipping_info.shipping_address1 }}<br />
-          Address 2: {{ shipping_info.shipping_address2 }}<br />
           City: {{ shipping_info.shipping_city }}<br />
           State: {{ shipping_info.shipping_state }}<br />
           Zipcode: {{ shipping_info.shipping_zipcode }}<br />
           Country: {{ shipping_info.shipping_country }}<br />
           <br />
           <a href="{% url 'checkout' %}" class="btn btn-outline-secondary"
-            >Update Shipping</a
+            >Atualizar</a
           >
         </div>
       </div>
       <br /><br />
 
       <div class="card">
-        <div class="card-header">Billing Info</div>
+        <div class="card-header">Cartão</div>
         <div class="card-body">{{ billing_form.as_p }}</div>
       </div>
       <br />

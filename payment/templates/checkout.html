@@ -8,7 +8,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">Checkout</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Review Your Order...</p>
+                    <p class="lead fw-normal text-white-50 mb-0">Reveja seu Pedido</p>
                 </div>
             </div>
         </header>
@@ -19,7 +19,7 @@
                     <div class="col-md-6 offset-md-3">
           <div class="card">
           <div class="card-header">
-            Order Summary
+           Pedidos
           </div>
           <div class="card-body">
             {% for product in cart_products %}
@@ -31,7 +31,7 @@
                 {% endif %}
 
                 <br/>
-                <small>Quantity: 
+                <small>Quantidade: 
                 {% for key, value in quantities.items %}
                     {% if key == product.id|slugify %}
                         {{ value }}
@@ -42,13 +42,13 @@
             {% endfor %}
             Total:  ${{ totals }}
             <br/><br/>
-            <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-outline-secondary">Update Items</a>
+            <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-outline-secondary">Atualizar</a>
           </div>
         </div>
 <br/><br/>
 <div class="card">
   <div class="card-header">
-    Shipping Info
+    Cartão
   </div>
   <div class="card-body">
     <form method="POST" action="{% url 'billing_info' %}">
@@ -59,9 +59,7 @@
 </div>
 <br/>
 
-<button type="submit" class="btn btn-secondary">
-        Continue To Billing
-</button>
+ <a href="{% url 'home' %}" class="btn btn-success">Finalizar Compra</a>
 
 </form>
 <br/><br/>
